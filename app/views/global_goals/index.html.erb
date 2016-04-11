@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Global Goals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Org name</th>
+      <th>Org title</th>
+      <th>What is doing</th>
+      <th>Why doing</th>
+      <th>Impact</th>
+      <th>Image link</th>
+      <th>Impact criteria</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @global_goals.each do |global_goal| %>
+      <tr>
+        <td><%= global_goal.name %></td>
+        <td><%= global_goal.org_name %></td>
+        <td><%= global_goal.org_title %></td>
+        <td><%= global_goal.what_is_doing %></td>
+        <td><%= global_goal.why_doing %></td>
+        <td><%= global_goal.impact %></td>
+        <td><%= global_goal.image_link %></td>
+        <td><%= global_goal.impact_criteria %></td>
+        <td><%= link_to 'Show', global_goal %></td>
+        <td><%= link_to 'Edit', edit_global_goal_path(global_goal) %></td>
+        <td><%= link_to 'Destroy', global_goal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Global goal', new_global_goal_path %>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+  <title>BusinessWorthy</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="header">
+  <%= render :partial => 'shared/top_navigation' %>
+</div>
+<div class="container">
+  <%= yield %>
+</div>
+<div class="footer">
+  <%= render :partial => 'shared/footer' %>
+</div>
+</div>
+</body>
+</html>

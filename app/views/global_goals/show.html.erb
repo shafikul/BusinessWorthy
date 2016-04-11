@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @global_goal.name %>
+</p>
+
+<p>
+  <strong>Org name:</strong>
+  <%= @global_goal.org_name %>
+</p>
+
+<p>
+  <strong>Org title:</strong>
+  <%= @global_goal.org_title %>
+</p>
+
+<p>
+  <strong>What is doing:</strong>
+  <%= @global_goal.what_is_doing %>
+</p>
+
+<p>
+  <strong>Why doing:</strong>
+  <%= @global_goal.why_doing %>
+</p>
+
+<p>
+  <strong>Impact:</strong>
+  <%= @global_goal.impact %>
+</p>
+
+<p>
+  <strong>Image link:</strong>
+  <%= @global_goal.image_link %>
+</p>
+
+<p>
+  <strong>Impact criteria:</strong>
+  <%= @global_goal.impact_criteria %>
+</p>
+
+<%= link_to 'Edit', edit_global_goal_path(@global_goal) %> |
+<%= link_to 'Back', global_goals_path %>
