@@ -12,4 +12,7 @@ class WelcomeController < ApplicationController
   def commit
 
   end
+  def submit
+
+   end
 end

@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   root 'welcome#home'
   get '/' => 'welcome#home'
   get 'commit'=> 'welcome#commit'
+  post 'submit' => 'welcome#submit'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
