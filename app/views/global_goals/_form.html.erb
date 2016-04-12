@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="col-lg-offset-3 col-lg-6">
+  <div class="col-lg-offset-4 col-lg-4">
     <%= form_for(@global_goal, :html => {:multipart => true}) do |f| %>
         <% if @global_goal.errors.any? %>
             <div id="error_explanation">
@@ -13,47 +13,37 @@
             </div>
         <% end %>
         <div class="field">
-          <!--<select name="post[person_id]">-->
-            <!--<option value="">Select Person</option>-->
-            <!--<option value="1">David</option>-->
-            <!--<option value="2">Sam</option>-->
-            <!--<option value="3">Tobias</option>-->
-          <!--</select>-->
-          <%= f.label :impact_criteria %><br>
-          <%= f.number_field :impact_criteria, class: 'form-control' %>
+          <%= select 'impact', 'criteria', [[ "The Global Goals", 0 ], [ "No Poverty", 1 ],["Zero Hunger", 2], ["Good Health and Well-being", 3],
+                     ["Quality Education", 4],["Gender Equality", 5],["Clean water and sanitation", 6], ["Affordable and clean energy", 7],
+                     ["Decent work and economic growth", 8], ["Indutry Innovation and Infrastructure", 9],
+                     ["Reduced Inequalities", 10], ["Sustainable cities and communities", 11], ["Responsible consumption and production", 12],
+                     ["Climate Action", 13], ["Life below water", 14], ["Life on Land", 15], ["Peace and justice strong institutions", 16],
+                     ["Patnerships for the goal", 17]], {required: 'true', autofocus: 'true', class: 'form-control'} %>
         </div>
         <div class="field">
-          <%= f.label :name %><br>
-          <%= f.text_field :name, class: 'form-control' %>
+          <%= f.text_field :name, class: 'form-control', placeholder: 'Name...' %>
         </div>
         <div class="field">
-          <%= f.label :org_name %><br>
-          <%= f.text_field :org_name, class: 'form-control' %>
+          <%= f.text_field :org_name, class: 'form-control', placeholder: 'Organigation Name...' %>
         </div>
         <div class="field">
-          <%= f.label :org_title %><br>
-          <%= f.text_field :org_title, class: 'form-control' %>
+          <%= f.text_field :org_title, class: 'form-control', placeholder: 'Organigation Title...' %>
         </div>
         <div class="field">
-          <%= f.label :what_is_doing %><br>
-          <%= f.text_area :what_is_doing, class: 'form-control' %>
+          <%= f.text_area :what_is_doing, class: 'form-control', placeholder: 'what is your company doing... ' %>
         </div>
         <div class="field">
-          <%= f.label :why_doing %><br>
-          <%= f.text_area :why_doing, class: 'form-control' %>
+          <%= f.text_area :why_doing, class: 'form-control', placeholder: 'Why are you doing it...' %>
         </div>
         <div class="field">
-          <%= f.label :impact %><br>
-          <%= f.text_area :impact, class: 'form-control' %>
+          <%= f.text_area :impact, class: 'form-control', placeholder: 'What is the impact...' %>
         </div>
         <div class="picture">
-          <%= f.label :image %><br>
           <%= f.file_field :image_link, class: 'btn btn-primary btn-lg' %><br/>
         </div>
         <div class="actions">
-          <%= f.submit "Update", class: 'btn btn-primary btn-lg'  %>
+          <%= f.submit "Create/Update", class: 'btn btn-primary'  %>
         </div>
-
     <% end %>
   </div>
 </div>

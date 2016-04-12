@@ -14,16 +14,16 @@
 ActiveRecord::Schema.define(version: 20160411125958) do
 
   create_table "global_goals", force: :cascade do |t|
-    t.text     "name"
-    t.text     "org_name"
-    t.text     "org_title"
-    t.text     "what_is_doing"
-    t.text     "why_doing"
-    t.text     "impact"
-    t.text     "image_link"
-    t.integer  "impact_criteria"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.string   "name",            limit: 255
+    t.string   "org_name",        limit: 255
+    t.string   "org_title",       limit: 255
+    t.text     "what_is_doing",   limit: 65535
+    t.text     "why_doing",       limit: 65535
+    t.text     "impact",          limit: 65535
+    t.string   "image_link",      limit: 255
+    t.integer  "impact_criteria", limit: 4
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
 
 end

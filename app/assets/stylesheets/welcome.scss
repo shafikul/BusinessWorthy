@@ -30,3 +30,92 @@
   position: absolute;
   width: 100%;
 }
+
+.avatar-image{
+  margin-left: 5px;
+  margin-right: 2%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.middle-section{
+//  min-height: 200px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+//  background-color: #aba;
+}
+.btn-primary {
+  padding: 18px 39px;
+  background-color: #bd1b41;
+  border: 0;
+  border-radius: 0;
+}
+.btn-primary:hover {
+  background-color: #A71537;
+}
+
+/*** business-banner ***/
+.business-banner {
+  background-color: #d7d7d7;
+  padding: 36px 0 55px;
+}
+.business-banner p {
+  margin-bottom: 0;
+}
+.business-banner-first-block {
+  padding-bottom: 20px;
+}
+.banner-map-col img {
+  padding-left: 52px;
+}
+.countdown-block {
+  list-style: none;
+}
+.countdown-block li {
+  width: 30px;
+  height: 43px;
+  float: left;
+  position: relative;
+  background-color: #000;
+  text-align: center;
+  margin-right: 10px;
+}
+.countdown-block li:last-child {
+  margin-right: 0;
+}
+.countdown-block li span {
+  position: relative;
+  color: #fff;
+  font-size: 34px;
+  z-index: 10;
+}
+.countdown-block li:before {
+  content: '';
+  width: 100%;
+  height: 1px;
+  background-color: #d7d7d7;
+  position: absolute;
+  top: 21px;
+  left: 0;
+}
+.countdown-block + p {
+  margin-left: 22px;
+}
+.business-worthy-text-col span {
+  color: #bd1b41;
+}
+.global-goals-text {
+  background: url('goals-tick.png') no-repeat;
+  min-height: 58px;
+}
+.global-goals-text p {
+  width: 280px;
+  padding-left: 90px;
+  font-size: 18px;
+}
+.commit-btn {
+  text-transform: uppercase;
+}
+.global-goals-text .commit-btn {
+  margin-left: 20px;
+}

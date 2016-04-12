@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#home'
   get '/' => 'welcome#home'
+  get 'commit'=> 'welcome#commit'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -10,6 +10,8 @@ class GlobalGoalsController < ApplicationController
   # GET /global_goals/1
   # GET /global_goals/1.json
   def show
+    @global_goal = GlobalGoal.find(params[:id])
+    @global_goals = GlobalGoal.all
   end
 
   # GET /global_goals/new
@@ -24,15 +26,26 @@ class GlobalGoalsController < ApplicationController
   # POST /global_goals
   # POST /global_goals.json
   def create
-    @global_goal = GlobalGoal.new(global_goal_params)
-
-    respond_to do |format|
-      if @global_goal.save
-        format.html { redirect_to @global_goal, notice: 'Global goal was successfully created.' }
-        format.json { render :show, status: :created, location: @global_goal }
+    if params['impact']['criteria'].present? && params['impact']['criteria'].to_i != 0
+      @global_goal = GlobalGoal.find_by(impact_criteria: params['impact']['criteria'].to_i ) rescue nil
+      if @global_goal.present?
+        @global_goal.update(global_goal_params)
       else
-        format.html { render :new }
-        format.json { render json: @global_goal.errors, status: :unprocessable_entity }
+        @global_goal = GlobalGoal.new(global_goal_params)
+        @global_goal.update(:impact_criteria => params['impact']['criteria'].to_i)
+      end
+      respond_to do |format|
+        if @global_goal.save
+          format.html { redirect_to @global_goal, notice: 'Global goal was successfully created.' }
+          format.json { render :show, status: :created, location: @global_goal }
+        else
+          format.html { render :new }
+          format.json { render json: @global_goal.errors, status: :unprocessable_entity }
+        end
+      end
+    else
+      respond_to do |format|
+          format.html { render :new }
       end
     end
   end
@@ -69,6 +82,6 @@ class GlobalGoalsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def global_goal_params
-      params.require(:global_goal).permit(:name, :org_name, :org_title, :what_is_doing, :why_doing, :impact, :image_link, :impact_criteria)
+      params.require(:global_goal).permit(:name, :org_name, :org_title, :what_is_doing, :why_doing, :impact, :image_link)
     end
 end
