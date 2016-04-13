@@ -30,13 +30,170 @@
     </div>
   </section>
 
-  <div class="row middle-section">
-    <div class="col-lg-12">
-      <h1>How people are making an Impact ? </h1>
-      <h3>Explore the global goals</h3>
-      <% @global_goal.each do |global| %>
-          <%= link_to((image_tag global.image_link.big_thumb.url if global.image_link.present?) ,global_goal_path(global) , class: "avatar-image" )%>
-      <% end %>
+  <section class="explore-goals-block">
+    <div class="container">
+      <h1>How are people making an impact?</h1>
+      <p>Explore the Global Goals</p>
+
+      <div class="row goals-block">
+        <div class="col-sm-2 goal-col goal-poverty">
+          <a href="/global_goals/1">
+            <span class="goal-no pull-left">1</span>
+            <span class="goal-text pull-left">No Poverty</span>
+            <div class="clearfix"></div>
+
+            <%= image_tag("no-poverty-icon.png", class: "img-responsive", alt:"No Poverty") %>
+          </a>
+        </div>
+
+        <div class="col-sm-2 goal-col goal-hunger">
+          <a href="global_goals/2">
+            <span class="goal-no pull-left"><%= GlobalGoal::GOAL_CRITERIA[2][1] %></span>
+            <span class="goal-text pull-left"><%= GlobalGoal::GOAL_CRITERIA[2][0] %></span>
+            <div class="clearfix"></div>
+            <%= image_tag("zero-hunger-icon.png", class: "img-responsive", alt: "Zero Hunger") %>
+          </a>
+        </div>
+
+        <div class="col-sm-2 goal-col goal-health">
+          <a href="#">
+            <span class="goal-no pull-left">3</span>
+            <span class="goal-text pull-left">Good Health and Well-Being</span>
+            <div class="clearfix"></div>
+            <%= image_tag("good-health-icon.png", class: "img-responsive", alt: "Good Health and Well-Being") %>
+          </a>
+        </div>
+
+        <div class="col-sm-2 goal-col goal-education">
+          <a href="#">
+            <span class="goal-no pull-left">4</span>
+            <span class="goal-text pull-left">Quality Education</span>
+            <div class="clearfix"></div>
+
+            <%= image_tag("quality-education-icon.png", class: "img-responsive", alt: "Quality Education") %>
+
+          </a>
+        </div>
+
+        <div class="col-sm-2 goal-col goal-gender-equality">
+          <a href="#">
+            <span class="goal-no pull-left">5</span>
+            <span class="goal-text pull-left">Gender Equality</span>
+            <div class="clearfix"></div>
+            <%= image_tag("gender-equality-icon.png", class: "img-responsive", alt: "Gender Equality") %>
+          </a>
+        </div>
+
+        <div class="col-sm-2 goal-col goal-water-sanitation">
+          <a href="#">
+            <span class="goal-no pull-left">6</span>
+            <span class="goal-text pull-left">Clean Water and Sanitation</span>
+            <div class="clearfix"></div>
+            <%= image_tag("water-sanitation-icon.png", class: "img-responsive", alt: "Clean Wter and Sanitation") %>
+          </a>
+        </div>
+
+        <div class="col-sm-2 goal-col goal-clean-energy">
+          <a href="#">
+            <span class="goal-no pull-left">7</span>
+            <span class="goal-text pull-left">affordable and clean energy</span>
+            <div class="clearfix"></div>
+            <%= image_tag("clean-energy-icon.png", class: "img-responsive", alt: "Affordable and Clean Energy") %>
+          </a>
+        </div>
+
+        <div class="col-sm-2 goal-col goal-economic">
+          <a href="#">
+            <span class="goal-no pull-left">8</span>
+            <span class="goal-text pull-left">Decnt Work and Economic Growth</span>
+            <div class="clearfix"></div>
+            <%= image_tag("economic-growth-icon.png", class: "img-responsive", alt: "Decnt Work and Economic Growth") %>
+          </a>
+        </div>
+        <div class="col-sm-2 goal-col goal-infastructure">
+          <a href="#">
+            <span class="goal-no pull-left">9</span>
+            <span class="goal-text pull-left">Industry, Innovation and Infastructure</span>
+            <div class="clearfix"></div>
+            <%= image_tag("infastructure-icon.png", class: "img-responsive", alt: "Industry, Innovation and Infastructure") %>
+          </a>
+        </div>
+        <div class="col-sm-2 goal-col goal-inequalities">
+          <a href="#">
+            <span class="goal-no pull-left">10</span>
+            <span class="goal-text pull-left">Reduced Inequalities</span>
+            <div class="clearfix"></div>
+            <%= image_tag("reduced-inequalities-icon.png", class: "img-responsive", alt: "Reduced Inequalities") %>
+          </a>
+        </div>
+        <div class="col-sm-2 goal-col goal-sustainable-city">
+          <a href="#">
+            <span class="goal-no pull-left">11</span>
+            <span class="goal-text pull-left">Sustainable Cities and Communities</span>
+            <div class="clearfix"></div>
+            <%= image_tag("city-community-icon.png", class: "img-responsive", alt: "Sustainable Cities and Communities") %>
+          </a>
+        </div>
+
+        <div class="col-sm-2 goal-col goal-responsible-consumption">
+          <a href="#">
+            <span class="goal-no pull-left">12</span>
+            <span class="goal-text pull-left">Responsible Consumption and Production</span>
+            <div class="clearfix"></div>
+            <%= image_tag("consumption-production.png", class: "img-responsive", alt: "Responsible Consumption and Production") %>
+          </a>
+        </div>
+
+        <div class="col-sm-2 goal-col goal-climate-action">
+          <a href="#">
+            <span class="goal-no pull-left">13</span>
+            <span class="goal-text pull-left">Climate Action</span>
+            <div class="clearfix"></div>
+            <%= image_tag("climate-action-icon.png", class: "img-responsive", alt: "Climate Action") %>
+          </a>
+        </div>
+
+        <div class="col-sm-2 goal-col goal-below-water">
+          <a href="#">
+            <span class="goal-no pull-left">14</span>
+            <span class="goal-text pull-left">Life below Water</span>
+            <div class="clearfix"></div>
+            <%= image_tag("infastructure-icon.png", class: "img-responsive", alt: "Life below Water") %>
+          </a>
+        </div>
+
+        <div class="col-sm-2 goal-col goal-on-land">
+          <a href="#">
+            <span class="goal-no pull-left">15</span>
+            <span class="goal-text pull-left">Life on Land</span>
+            <div class="clearfix"></div>
+            <%= image_tag("life-land.png", class: "img-responsive", alt: "Life on Land") %>
+          </a>
+        </div>
+
+        <div class="col-sm-2 goal-col goal-peace-justice">
+          <a href="#">
+            <span class="goal-no pull-left">16</span>
+            <span class="goal-text pull-left">Peace and Justice Strong Institutions</span>
+            <div class="clearfix"></div>
+            <%= image_tag("peace-justice-icon.png", class: "img-responsive", alt: "Life on Land") %>
+          </a>
+        </div>
+
+        <div class="col-sm-2 goal-col goal-partnership">
+          <a href="#">
+            <span class="goal-no pull-left">17</span>
+            <span class="goal-text pull-left">Partnerships for the Goals</span>
+            <div class="clearfix"></div>
+            <%= image_tag("partnerships-golas-icon.png", class: "img-responsive", alt: "Partnerships for the Goals") %>
+          </a>
+        </div>
+
+        <div class="col-sm-2">
+            <%= image_tag("global-goals-logo.png", class: "img-responsive", alt: "Global Goals") %>
+          </a>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 </div>
