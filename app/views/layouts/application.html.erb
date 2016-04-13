@@ -7,16 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-    <div class="header">
+    <header>
       <%= render :partial => 'shared/top_navigation' %>
-    </div>
-    <div class="container">
+    </header>
+
       <% flash.each do |name, msg| %>
           <%= content_tag :div, msg, class: "alert alert-info" %>
       <% end %>
       <%= yield %>
-    </div>
+
     <%= render :partial => 'shared/footer' %>
-    </div>
+
 </body>
 </html>

@@ -1,60 +1,102 @@
-.header-text{
-  font-size: 34px;
-  margin-left: 20px;
-  margin-bottom: 10px;
-}
-.footer-link{
-  margin-top: 50px;
-  color: red;
-  float: right;
-}
-#copyright-text{
-  margin-top: 10px;
-}
-
-#footer-text-1{
-  color: red;
-}
-
-.follow-link{
-  font-size: 52px;
-  margin-right: 5px;
-}
-.center-text{
-  margin-top: 50px;
-}
-.footer{
-  background-color: #f5f5f5;
-  bottom: 0;
-  height: 60px;
-  position: absolute;
-  width: 100%;
-}
-
-.avatar-image{
-  margin-left: 5px;
-  margin-right: 2%;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.middle-section{
-//  min-height: 200px;
-  margin-top: 50px;
-  margin-bottom: 50px;
-//  background-color: #aba;
-}
+/*==================== Common Styling =========================*/
 .btn-primary {
   padding: 18px 39px;
   background-color: #bd1b41;
   border: 0;
   border-radius: 0;
 }
-.btn-primary:hover {
+.btn-primary:hover, .btn-primary:focus {
   background-color: #A71537;
+  outline: 0;
+}
+.btn-link {
+  color: #bd1b41;
+}
+.btn-link:hover, .btn-link:focus {
+  color: #A71537;
 }
 
-/*** business-banner ***/
+/*==================== style for Home =========================*/
+/************ Header ************/
+.navbar {
+  margin-bottom: 0;
+  border: 0;
+  border-bottom: 1px solid transparent;
+}
+.navbar-default {
+  background: #fff;
+  border-color: #969696;
+}
+.navbar-header h1 {
+  margin-left: 30px;
+  margin-top: 35px;
+}
+.navbar-brand {
+  height: auto;
+  padding: 13px 15px 18px;
+}
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+  color: #da7f76;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+  background: none;
+  color: #da7f76;
+}
+
+/*** slider-content ***/
+.slider-content {
+  position: relative;
+}
+.slider-content .container {
+  position: relative;
+}
+.slider-pagination-block {
+  width: 100%;
+  height: 115px;
+  background-color: rgba(5, 188, 227, 0.7);
+  position: absolute;
+  bottom: 0;
+}
+.slider-people {
+  width: 300px;
+  height: 356px;
+  background-color: #e2e2e2;
+  margin-top: 30px;
+  position: relative;
+  z-index: 10;
+}
+.slider-people-info {
+  margin: 150px 0 0 20px;
+}
+.slider-description {
+  width: 590px;
+  position: absolute;
+  right: 75px;
+  top: 55px;
+}
+.slider-pagination {
+  list-style: none;
+  position: absolute;
+  left: 213px;
+  top: 42px;
+  z-index: 20;
+}
+.slider-pagination li {
+  float: left;
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  margin-right: 10px;
+  background: url('slider-dot.png') no-repeat;
+}
+.slider-pagination li.active {
+  background: url('slider-dot-active.png') no-repeat;
+}
+.slider-pagination li:hover {
+  cursor: pointer;
+}
+
+/************ business-banner ************/
 .business-banner {
   background-color: #d7d7d7;
   padding: 36px 0 55px;
@@ -105,8 +147,8 @@
   color: #bd1b41;
 }
 .global-goals-text {
-  background: url('goals-tick.png') no-repeat;
-  height: 58px;
+  background: url(goals-tick.png) no-repeat;
+  min-height: 58px;
 }
 .global-goals-text p {
   width: 280px;
@@ -120,10 +162,11 @@
   margin-left: 20px;
 }
 
-//global goal
+/************ explore-goals-block ************/
 .explore-goals-block {
   background-color: #efefef;
-  padding: 45px 0 70px;
+  padding: 45px 0 50px;
+  border-bottom: 1px solid #969696;
 }
 .explore-goals-block h1 {
   font-size: 33px;
@@ -151,15 +194,13 @@
 }
 .goal-col img {
   margin-top: 14px;
-  /*position: absolute;
-  bottom: 5px;
-  left: 27%;*/
+  display: inline-block;
 }
 .goal-col {
   margin-bottom: 20px;
 }
 .goal-col a {
-  height: 161px;
+  height: 171px;
   position: relative;
 }
 .author-col a {
@@ -288,4 +329,72 @@
 .goal-partnership .goal-text {
   width: 110px;
   padding-left: 14px;
+}
+
+/************ footer ************/
+footer .container {
+  padding: 28px 0 35px;
+}
+.social-media {
+  list-style: none;
+  padding-top: 56px;
+}
+.social-media li {
+  float: left;
+  margin-right: 20px;
+}
+.social-media li:last-child {
+  margin-right: 0;
+}
+.social-media li a {
+  width: 44px;
+  height: 46px;
+  display: block;
+}
+.facebook-icon {
+  background: url('facebook-icon.png');
+}
+.twitter-icon {
+  background: url('twitter-icon.png');
+}
+.linked-in-icon {
+  background: url('linked-in-icon.png');
+}
+.gmail-icon {
+  background: url('gmail-icon.png');
+}
+.footer-link-block {
+  padding-top: 59px;
+}
+.footer-link-block p {
+  text-align: right;
+}
+.footer-link-block .btn {
+  padding: 0;
+}
+.copywrite-text {
+  margin-top: 45px;
+}
+
+/*==================== Media Query =========================*/
+@media (min-width: 768px) {
+  /*==================== style for Home =========================*/
+  .navbar {
+    border-radius: 0;
+  }
+  header .navbar-nav {
+    float: right;
+  }
+  header .nav>li>a {
+    padding-left: 10px;
+  }
+  header .nav>li:first-child>a {
+    padding-left: 0;
+  }
+  header .nav>li:last-child>a {
+    padding-right: 0;
+  }
+  header .navbar-nav>li>a {
+    padding-top: 58px;
+  }
 }
